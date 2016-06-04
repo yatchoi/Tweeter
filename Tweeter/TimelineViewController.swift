@@ -17,7 +17,7 @@ class TimelineViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    populateTweets()
+    populateTweets(nil)
     
     // Nav setup
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 125.0/255.0, green: 225.0/255.0, blue: 255.0/255.0, alpha: 1)
@@ -44,10 +44,11 @@ class TimelineViewController: UIViewController {
     timelineTable.insertSubview(refreshControl, atIndex: 0)
   }
   
-  func populateTweets() {
+  func populateTweets(refreshControl: UIRefreshControl?) {
     TwitterClient.sharedInstance.fetchHomeTimeline({ (tweets: [Tweet]) in
       self.tweets = tweets
       self.timelineTable.reloadData()
+      refreshControl?.endRefreshing()
     }) { (error: NSError) in
       print("Error getting tweets: \(error.description)")
     }

@@ -44,10 +44,22 @@ class MainViewController: UIViewController {
     
     let pvc = ProfileViewController()
     pvc.user = User.currentUser
+    let nvc2 = UINavigationController(rootViewController: pvc)
+    nvc2.navigationBar.barTintColor = UIColor(red: 125.0/255.0, green: 225.0/255.0, blue: 255.0/255.0, alpha: 1)
     
-    viewControllers = [pvc, nvc]
+    let signOutButton = UIBarButtonItem(title: "Sign Out", style: .Plain, target: self, action: #selector(MainViewController.signOutTapped))
+    signOutButton.tintColor = UIColor.whiteColor()
+    pvc.navigationItem.leftBarButtonItem = signOutButton
+    
+    pvc.navigationItem.title = "Me"
+    
+    viewControllers = [nvc2, nvc]
     self.contentViewController = viewControllers[1]
     // Do any additional setup after loading the view.
+  }
+  
+  func signOutTapped() {
+    TwitterClient.sharedInstance.logout()
   }
 
   @IBAction func onContentPanned(sender: UIPanGestureRecognizer) {
