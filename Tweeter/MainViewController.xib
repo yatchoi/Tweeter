@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Tweeter" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="OoD-3z-SOG" id="tw6-4g-zaQ"/>
+                <outlet property="leftMarginConstraint" destination="7cF-Hp-A0B" id="0q4-dw-cmt"/>
+                <outlet property="menuView" destination="tUh-fN-JpV" id="w7z-OZ-xfR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUh-fN-JpV">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.48881597319999998" green="0.8838563975" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OoD-3z-SOG">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="rsQ-Ql-ubK" appends="YES" id="cAG-ko-shJ"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tUh-fN-JpV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1AK-0T-nz3"/>
+                <constraint firstItem="OoD-3z-SOG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7cF-Hp-A0B"/>
+                <constraint firstItem="tUh-fN-JpV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ncw-lU-Sxg"/>
+                <constraint firstAttribute="bottom" secondItem="tUh-fN-JpV" secondAttribute="bottom" id="ViB-0H-tmq"/>
+                <constraint firstItem="OoD-3z-SOG" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="fzo-2M-Rgz"/>
+                <constraint firstItem="OoD-3z-SOG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ihX-bg-KqB"/>
+                <constraint firstAttribute="bottom" secondItem="OoD-3z-SOG" secondAttribute="bottom" id="mMX-0k-phe"/>
+                <constraint firstAttribute="trailing" secondItem="tUh-fN-JpV" secondAttribute="trailing" id="mee-Ww-tpE"/>
+            </constraints>
+            <point key="canvasLocation" x="299" y="340"/>
+        </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="rsQ-Ql-ubK">
+            <connections>
+                <action selector="onContentPanned:" destination="-1" id="h9E-Fx-gc4"/>
+            </connections>
+        </panGestureRecognizer>
+    </objects>
+</document>
