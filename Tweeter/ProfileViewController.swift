@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController {
   @IBOutlet weak var tweetCount: UILabel!
   @IBOutlet weak var followingCount: UILabel!
   @IBOutlet weak var followersCount: UILabel!
-  var userHeaderView: UserHeaderView!
+  var userHeaderView: UserHeaderProfileView!
   
   var usernameToQuery: String!
   var user: User!
@@ -22,10 +22,13 @@ class ProfileViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    userHeaderView = UserHeaderView(frame: headerViewContainer.frame)
+    userHeaderView = UserHeaderProfileView(frame: headerViewContainer.frame)
     userHeaderView.name = user.name!
     userHeaderView.username = "@\(user.screenname!)"
     userHeaderView.image = user.profileImageUrl!
+    if (user.profileBackgroundImageUrl != nil) {
+      userHeaderView.bgImage = user.profileBackgroundImageUrl
+    }
 
     headerViewContainer.addSubview(userHeaderView)
     
@@ -34,8 +37,9 @@ class ProfileViewController: UIViewController {
     let userHeaderViewLeft = NSLayoutConstraint(item: userHeaderView, attribute: .Leading, relatedBy: .Equal, toItem: headerViewContainer, attribute: .Leading, multiplier: 1, constant: 0)
     let userHeaderViewRight = NSLayoutConstraint(item: userHeaderView, attribute: .Trailing, relatedBy: .Equal, toItem: headerViewContainer, attribute: .Trailing, multiplier: 1, constant: 0)
     let userHeaderViewTop = NSLayoutConstraint(item: userHeaderView, attribute: .Top, relatedBy: .Equal, toItem: headerViewContainer, attribute: .Top, multiplier: 1, constant: 60)
+    let userHeaderViewBottom = NSLayoutConstraint(item: headerViewContainer, attribute: .Bottom, relatedBy: .Equal, toItem: userHeaderView, attribute: .Bottom, multiplier: 1, constant: 0)
     
-    headerViewContainer.addConstraints([userHeaderViewLeft, userHeaderViewRight, userHeaderViewTop])
+    headerViewContainer.addConstraints([userHeaderViewLeft, userHeaderViewRight, userHeaderViewTop, userHeaderViewBottom])
 
     // Do any additional setup after loading the view.
     if (usernameToQuery != nil) {

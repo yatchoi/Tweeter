@@ -24,9 +24,23 @@
                         <action selector="onLoginTapped:" destination="-1" eventType="touchUpInside" id="X9y-63-pPL"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tweeter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuc-tf-iEK">
+                    <rect key="frame" x="66" y="139" width="230" height="105"/>
+                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="66"/>
+                    <color key="textColor" red="0.38754884560000002" green="0.70223125220000004" blue="0.80070112179999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="dfM-5V-FzD">
+                    <rect key="frame" x="28" y="173" width="48" height="48"/>
+                    <color key="backgroundColor" red="0.30704895500000001" green="0.0" blue="0.15499432369999999" alpha="0.94905711199999998" colorSpace="calibratedRGB"/>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.71158945445978139" green="1" blue="0.94137455675733983" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="tintColor" red="0.48881597319999998" green="0.8838563975" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="325" y="664"/>
         </view>
     </objects>
+    <resources>
+        <image name="Logo" width="24" height="24"/>
+    </resources>
 </document>
